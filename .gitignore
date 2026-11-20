@@ -1,0 +1,8 @@
+node_modules/
+.umi/
+src/.umi/
+src/.umi-production/
+dist/
+.env.local
+*.log
+.playwright-cli/

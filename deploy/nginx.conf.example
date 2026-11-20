@@ -1,0 +1,17 @@
+# 将 root 替换为 dist 的实际部署路径；API 转发按实际后端配置。
+server {
+    listen 80;
+    server_name localhost;
+    root /srv/monitor-portal/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
