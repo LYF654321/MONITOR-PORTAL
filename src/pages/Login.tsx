@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { history } from "@umijs/max";
-import { Button, Form, Input, Segmented, Tabs } from "antd";
+import { Button, Form, Input, Segmented, Space, Tabs } from "antd";
 import {
   ArrowRightOutlined,
   LockOutlined,
