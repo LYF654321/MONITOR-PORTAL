@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { history } from "@umijs/max";
-import { Button, Form, Input, Segmented, Space, Tabs } from "antd";
+import { Button, Form, Input, Segmented, Tabs } from "antd";
 import {
   ArrowRightOutlined,
   LockOutlined,
@@ -34,9 +34,6 @@ export default function Login() {
     <div className="login-page">
       <header className="public-header">
         <Brand />
-        <Space>
-          <span className="public-header-label">华测云 · 监测服务</span>
-        </Space>
       </header>
       <main className="login-main">
         <section className="login-card">
