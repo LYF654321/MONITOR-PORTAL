@@ -55,10 +55,7 @@ export default function Users() {
   const managed = data!.users.find((u) => u.id === selected);
   return (
     <>
-      <PageHeader
-        title="用户管理"
-        description="管理用户的门户访问资格和业务系统入口，保留原有业务权限。"
-      />
+      <PageHeader title="用户管理" />
       <section className="content-panel">
         <Form
           name="userSearch"

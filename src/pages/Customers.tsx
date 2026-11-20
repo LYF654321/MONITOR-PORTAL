@@ -37,10 +37,7 @@ export default function Customers() {
   const rows = data!.customers.filter((c) => matches(`${c.name} ${c.key}`, search));
   return (
     <>
-      <PageHeader
-        title="客户管理"
-        description="以客户 Key 关联业务系统，统一维护客户空间和管理员。"
-      />
+      <PageHeader title="客户管理" />
       <section className="content-panel">
         <div className="compact-search">
           <div>

@@ -91,7 +91,6 @@ export default function Invitations() {
     <>
       <PageHeader
         title="邀请管理"
-        description="通过邀请连接客户与业务系统，统一管理每一次开通。"
         extra={
           <Button
             type="primary"

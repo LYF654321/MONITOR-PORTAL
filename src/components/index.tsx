@@ -85,14 +85,14 @@ export function PageHeader({
   extra,
 }: {
   title: string;
-  description: string;
+  description?: string;
   extra?: ReactNode;
 }) {
   return (
     <div className="page-heading">
       <div>
         <h1>{title}</h1>
-        <p>{description}</p>
+        {description && <p>{description}</p>}
       </div>
       {extra}
     </div>

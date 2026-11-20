@@ -5,22 +5,25 @@ import {
   ArrowRightOutlined,
   CheckCircleFilled,
   CloudServerOutlined,
-  DashboardOutlined,
   DatabaseOutlined,
   SafetyCertificateOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import { AdminBadge, CopyText, PageHeader, SystemTag } from '@/components';
+import masLogo from '@/assets/system-mas.png';
+import iotLogo from '@/assets/system-iot.png';
+import dorsLogo from '@/assets/system-dors.png';
+import dtsLogo from '@/assets/system-dts.png';
 import { useAction, usePortal } from '@/hooks/usePortal';
 import { api } from '@/services';
 import { effectiveSystems } from '@/utils';
 import type { SystemCode } from '@/types';
-const icons = {
-  IOT: <ApiOutlined />,
-  MAS: <DashboardOutlined />,
-  DORS: <DatabaseOutlined />,
-  DTS: <CloudServerOutlined />,
+const systemLogos = {
+  IOT: iotLogo,
+  MAS: masLogo,
+  DORS: dorsLogo,
+  DTS: dtsLogo,
 };
 export default function Workbench() {
   const { data } = usePortal();
@@ -38,7 +41,7 @@ export default function Workbench() {
   }
   return (
     <>
-      <PageHeader title="工作台" description="查看您的客户信息，快速进入已开通的业务系统。" />
+      <PageHeader title="工作台" />
       <section className="welcome-panel">
         <div>
           <span className="welcome-label">欢迎回来</span>
@@ -91,7 +94,9 @@ export default function Workbench() {
                   key={system.code}
                 >
                   <div className="business-card-top">
-                    <span className="business-icon">{icons[system.code]}</span>
+                    <span className="business-icon">
+                      <img src={systemLogos[system.code]} alt={`${system.code} 系统 Logo`} />
+                    </span>
                     <div>
                       <h3>
                         {system.name} <SystemTag code={system.code} />
@@ -133,7 +138,9 @@ export default function Workbench() {
                 .filter((s) => !s.available)
                 .map((system) => (
                   <div className="future-system" key={system.code}>
-                    <span>{icons[system.code]}</span>
+                    <span className="future-system-logo">
+                      <img src={systemLogos[system.code]} alt={`${system.code} 系统 Logo`} />
+                    </span>
                     <strong>{system.code}</strong>
                     <p>{system.name}</p>
                     <Tag bordered={false}>待接入</Tag>

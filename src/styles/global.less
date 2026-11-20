@@ -958,12 +958,16 @@ p {
   width: 52px;
   height: 52px;
   border-radius: 12px;
-  font-size: 29px;
   background: var(--warm);
-  color: #eb914a;
   display: grid;
   place-items: center;
   flex-shrink: 0;
+}
+.business-icon img {
+  display: block;
+  max-width: 42px;
+  max-height: 42px;
+  object-fit: contain;
 }
 .business-card-top h3 {
   font-size: 18px;
@@ -1026,10 +1030,20 @@ p {
   border-radius: 6px;
   background: var(--soft);
 }
-.future-system > span:first-child {
-  color: var(--secondary);
-  font-size: 22px;
-  margin-right: 10px;
+.future-system-logo {
+  width: 34px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.future-system-logo img {
+  display: block;
+  max-width: 72px;
+  max-height: 28px;
+  object-fit: contain;
 }
 .future-system strong {
   font-weight: 500;
@@ -1702,7 +1716,7 @@ a:focus-visible {
   .future-system {
     padding: 15px 10px;
   }
-  .future-system > span:first-child {
+  .future-system-logo {
     margin-right: 3px;
   }
   .future-system p {
